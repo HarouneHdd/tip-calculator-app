@@ -12,8 +12,10 @@
 <body>
     <main>
         <img src="Resources/Images/logo.svg" alt="Logo" id="logo"/>
-        <div id="main-container">
-            <div id="bill-input">
+        <div class="flexbox-column" id="main-container">
+            <div class="custom-input" id="bill-input">
+                <!--I need to turn the text type into number-->
+                <!--I need to add the two icons-->
                 <label for="bill">Bill</label>
                 <input type="text" name="bill" id="bill" placeholder="0">
             </div>
@@ -28,11 +30,11 @@
                     <input type="text" name="custom-tip" id="custom-tip" placeholder="Custom">
                 </div>
             </div>
-            <div id="people-num-input">
+            <div class="custom-input" id="people-num-input">
                 <label for="people-num">Number of People</label>
                 <input type="text" name="people-num" id="people-num" placeholder="0">
             </div>
-            <div class="flexbox">
+            <div class="flexbox-column">
                 <div>
                     <p>Tip Amount</p>
                     <small>/ person</small>

@@ -40,11 +40,81 @@ body {
 
 /* # Layout and Design */
 @media only screen and (min-width: 375px) {
-    /*#logo {
+    #logo {
         display: block;
         margin: auto;
         padding: 20px 0;
-    }*/
+    }
+
+    .flexbox-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #main-container {
+        background-color: white;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+
+    .custom-input {
+        display: flex;
+        flex-wrap: wrap;
+        width: 85%;
+        margin: 30px 0 30px 0;
+    }
+    .custom-input label {
+        color: var(--darker-grayish-cyan);
+        font-size: 0.7rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .custom-input input {
+        border: none;
+        background-color: var(--lighter-grayish-cyan);
+        width: 100%;
+        text-align: end;
+        height: 50px;
+        padding: 0 20px;
+        border-radius: 3px;
+        font-size: 1rem;
+        color: var(--very-dark-cyan);
+        font-weight: bold;
+    }
+
+    #tip-selector {
+        width: 85%;
+    }
+    #tip-selector p {
+        color: var(--darker-grayish-cyan);
+        font-size: 0.7rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    #tip-selector .grid {
+        display: grid;
+        grid-template: repeat(3, 50px) / repeat(2, 150px);
+        justify-content: center;
+        gap: 17px;
+    }
+    #tip-selector button {
+        border: none;
+        background-color: var(--very-dark-cyan);
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+    #tip-selector input {
+        border: none;
+        background-color: var(--lighter-grayish-cyan);
+        color: var(--very-dark-cyan);
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: end;
+        border-radius: 5px;
+    }
 }
 
 @media only screen and (min-width: 1440px) {
