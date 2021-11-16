@@ -61,6 +61,7 @@ body {
     .custom-input {
         display: flex;
         flex-wrap: wrap;
+        position: relative;
         width: 85%;
         margin: 30px 0 30px 0;
     }
@@ -81,6 +82,11 @@ body {
         font-size: 1rem;
         color: var(--very-dark-cyan);
         font-weight: bold;
+    }
+    #bill-input img {
+        position: absolute;
+        top: 42px;
+        left: 20px;
     }
 
     #tip-selector {
@@ -114,6 +120,12 @@ body {
         font-weight: bold;
         text-align: end;
         border-radius: 5px;
+    }
+
+    #people-num-input img {
+        position: absolute;
+        top: 42px;
+        left: 20px;
     }
 }
 
