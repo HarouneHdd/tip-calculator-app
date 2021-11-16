@@ -3,12 +3,12 @@
 /* Weights to be used: 400, 700 */
 @font-face {
     font-family: "Space Mono";
-    src: url("../Fonts/Space_Mono/SpaceMono-Regular.ttf");
+    src: url("../Fonts/Space_Mono/SpaceMono-Regular.ttf") format("truetype");
     font-weight: 400;
 }
 @font-face {
     font-family: "Space Mono";
-    src: url(../Fonts/Space_Mono/SpaceMono-Bold.ttf);
+    src: url("../Fonts/Space_Mono/SpaceMono-Bold.ttf") format("truetype");
     font-weight: 700;
 }
 
