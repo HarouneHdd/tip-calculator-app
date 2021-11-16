@@ -1,0 +1,48 @@
+/* # General */
+/* ## Font */
+/* Weights to be used: 400, 700 */
+@font-face {
+    font-family: "Space Mono";
+    src: url("../Fonts/Space_Mono/SpaceMono-Regular.ttf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Space Mono";
+    src: url(../Fonts/Space_Mono/SpaceMono-Bold.ttf);
+    font-weight: 700;
+}
+
+* {
+    font-family: "Space Mono";
+    user-select: none;
+}
+html {
+    font-size: 24px;
+}
+body {
+
+}
+
+/* # Constants */
+/* ## Colors */
+:root {
+    /* ### Primary */
+    --strong-cyan: #26c0ab;
+
+    /* ### Neutral */
+    --very-dark-cyan: #00494d;
+    --darker-grayish-cyan: #5e7a7d;
+    --dark-grayish-cyan: #7f9c9f;
+    --light-grayish-cyan: #c5e4e7;
+    --lighter-grayish-cyan: #f4fafa;
+    /* white color */
+}
+
+/* # Layout and Design */
+@media only screen and (min-width: 375px) {
+    
+}
+
+@media only screen and (min-width: 1440px) {
+    
+}
