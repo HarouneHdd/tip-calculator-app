@@ -120,6 +120,7 @@ body {
         font-weight: bold;
         text-align: end;
         border-radius: 5px;
+        padding-right: 20px;
     }
 
     #people-num-input img {
