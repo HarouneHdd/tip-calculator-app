@@ -15,6 +15,9 @@
         <div class="flexbox-column" id="main-container">
             <div class="custom-input" id="bill-input">
                 <label for="bill">Bill</label>
+                <!-- I want to add a mechanism in place which limits inputs to two decimal places
+                And would like to prevent entering negative numbers (regex would allow only numbers and the period)
+                Here is a potential regex (pattern="^\d*(\.\d{0,2})?$") -->
                 <input type="number" name="bill" id="bill" placeholder="0">
                 <img src="Resources/Images/icon-dollar.svg" alt="dollar icon"/>
             </div>
@@ -34,7 +37,7 @@
                 <input type="number" name="people-num" id="people-num" placeholder="0">
                 <img src="Resources/Images/icon-person.svg" alt="dollar icon"/>
             </div>
-            <div class="flexbox-column">
+            <div class="flexbox-column results-container">
                 <div>
                     <p>Tip Amount</p>
                     <small>/ person</small>

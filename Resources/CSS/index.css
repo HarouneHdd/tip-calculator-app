@@ -43,7 +43,8 @@ body {
     #logo {
         display: block;
         margin: auto;
-        padding: 20px 0;
+        margin-top: 50px;
+        margin-bottom: 42px;
     }
 
     .flexbox-column {
@@ -82,8 +83,12 @@ body {
         font-size: 1rem;
         color: var(--very-dark-cyan);
         font-weight: bold;
+        user-select: text;
     }
-    #bill-input img {
+    .custom-input input::placeholder {
+        color: #5e7a7d80;
+    }
+    .custom-input img {
         position: absolute;
         top: 42px;
         left: 20px;
@@ -109,7 +114,6 @@ body {
         background-color: var(--very-dark-cyan);
         color: white;
         font-size: 1rem;
-        font-weight: bold;
         border-radius: 5px;
     }
     #tip-selector input {
@@ -123,10 +127,50 @@ body {
         padding-right: 20px;
     }
 
-    #people-num-input img {
-        position: absolute;
-        top: 42px;
-        left: 20px;
+    .results-container {
+        justify-content: end;
+        background-color: var(--very-dark-cyan);
+        border-radius: 15px;
+        width: 90%;
+        height: 250px;
+        margin-bottom: 10px;
+    }
+    .results-container div {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 86%;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    .results-container p {
+        color: white;
+        font-size: 0.7rem;
+        padding-top: 7px;
+    }
+    .results-container small {
+        color: var(--dark-grayish-cyan);
+        font-size: 0.55rem;
+        padding-top: 5px;
+    }
+    #tip-amount, #total {
+        color: var(--strong-cyan);
+        font-size: 1.45rem;
+        font-weight: bold;
+        text-align: end;
+        padding-top: 5px;
+    }
+    .results-container #reset-button {
+        border: transparent;
+        border-radius: 5px;
+        background-color: var(--strong-cyan);
+        color: var(--very-dark-cyan);
+        width: 86%;
+        height: 50px;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 15px;
+        margin-bottom: 25px;
     }
 }
 
