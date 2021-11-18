@@ -11,7 +11,7 @@
     src: url("../Fonts/Space_Mono/SpaceMono-Bold.ttf") format("truetype");
     font-weight: 700;
 }
-
+/* Other */
 * {
     font-family: "Space Mono";
     user-select: none;
@@ -21,6 +21,12 @@ html {
 }
 body {
     background-color: var(--light-grayish-cyan);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* # Constants */
