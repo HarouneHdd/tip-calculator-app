@@ -80,6 +80,12 @@ input[type=number]::-webkit-outer-spin-button {
         width: 85%;
         margin: 30px 0 30px 0;
     }
+    .custom-input input:hover {
+        cursor: pointer;
+    }
+    .custom-input input:focus {
+        outline-color: var(--strong-cyan);
+    }
     .custom-input label {
         color: var(--darker-grayish-cyan);
         font-size: 0.7rem;
@@ -130,6 +136,11 @@ input[type=number]::-webkit-outer-spin-button {
         font-size: 1rem;
         border-radius: 5px;
     }
+    #tip-selector button:hover {
+        cursor: pointer;
+        background-color: #aae0d9;
+        color: var(--very-dark-cyan);
+    }
     #tip-selector input {
         border: none;
         background-color: var(--lighter-grayish-cyan);
@@ -139,6 +150,12 @@ input[type=number]::-webkit-outer-spin-button {
         text-align: end;
         border-radius: 5px;
         padding-right: 20px;
+    }
+    #tip-selector input:hover {
+        cursor: pointer;
+    }
+    #tip-selector input:focus {
+        outline-color: var(--strong-cyan);
     }
 
     .results-container {
@@ -177,7 +194,7 @@ input[type=number]::-webkit-outer-spin-button {
     .results-container #reset-button {
         border: transparent;
         border-radius: 5px;
-        background-color: var(--strong-cyan);
+        background-color: #6a918c;
         color: var(--very-dark-cyan);
         width: 86%;
         height: 50px;
@@ -230,9 +247,7 @@ input[type=number]::-webkit-outer-spin-button {
         margin-bottom: 8px;
     }
     #tip-selector p {
-        color: var(--darker-grayish-cyan);
         font-size: 0.7rem;
-        font-weight: bold;
         margin-bottom: 20px;
     }
     #tip-selector .grid {
@@ -242,18 +257,11 @@ input[type=number]::-webkit-outer-spin-button {
         gap: 15px;
     }
     #tip-selector button {
-        border: none;
-        background-color: var(--very-dark-cyan);
-        color: white;
         font-size: 1rem;
         border-radius: 5px;
     }
     #tip-selector input {
-        border: none;
-        background-color: var(--lighter-grayish-cyan);
-        color: var(--very-dark-cyan);
         font-size: 1rem;
-        font-weight: bold;
         border-radius: 5px;
         padding-right: 8px;
     }
@@ -268,38 +276,26 @@ input[type=number]::-webkit-outer-spin-button {
         margin-bottom: 0;
     }
     .results-container div {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
         width: 86%;
         height: 50px;
         margin-bottom: 30px;
     }
     .results-container p {
-        color: white;
         font-size: 0.65rem;
         padding-top: 7px;
     }
     .results-container small {
-        color: var(--dark-grayish-cyan);
         font-size: 0.5rem;
         padding-top: 5px;
     }
     #tip-amount, #total {
-        font-size: 1.5rem;
-        font-weight: bold;
-        text-align: end;
-        padding-top: 3px;
+        font-size: 1.6rem;
+        padding-top: 4px;
     }
     .results-container #reset-button {
-        border: transparent;
-        border-radius: 5px;
-        background-color: var(--strong-cyan);
-        color: var(--very-dark-cyan);
         width: 86%;
         height: 50px;
         font-size: 1rem;
-        font-weight: bold;
         margin-top: 23%;
         margin-bottom: 35px;
     }
