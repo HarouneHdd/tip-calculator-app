@@ -45,6 +45,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* # Layout and Design */
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 87vh;
+}
+
 @media only screen and (min-width: 375px) {
     #logo {
         display: block;
@@ -184,8 +192,8 @@ input[type=number]::-webkit-outer-spin-button {
     #logo {
         display: block;
         margin: auto;
-        margin-top: 20px;
-        margin-bottom: 42px;
+        margin-top: 0;
+        margin-bottom: 75px;
     }
 
     .flexbox-column {
@@ -194,14 +202,16 @@ input[type=number]::-webkit-outer-spin-button {
 
     #main-container {
         justify-content: center;
-        margin: auto;
         border-radius: 15px;
         width: 900px;
-        height: 440px;
+        height: 470px;
+        box-shadow: 0 20px 40px #00000020, 0 -5px 40px #00000015;
+        padding-left: 18px;
+        padding-right: 9px;
     }
 
     .custom-input {
-        width: 42%;
+        width: 45%;
         margin: 30px 0 30px 0;
     }
     .custom-input label {
@@ -216,7 +226,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     #tip-selector {
-        width: 42%;
+        width: 45%;
     }
     #tip-selector p {
         color: var(--darker-grayish-cyan);
@@ -226,7 +236,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     #tip-selector .grid {
         display: grid;
-        grid-template: repeat(2, 50px) / repeat(3, 115px);
+        grid-template: repeat(2, 50px) / repeat(3, 123px);
         justify-content: center;
         gap: 15px;
     }
@@ -243,14 +253,17 @@ input[type=number]::-webkit-outer-spin-button {
         color: var(--very-dark-cyan);
         font-size: 1rem;
         font-weight: bold;
-        text-align: end;
         border-radius: 5px;
-        padding-right: 20px;
+        padding-right: 8px;
+    }
+    #tip-selector input::placeholder {
+        text-align: center;
+        padding-right: 0;
     }
 
     .results-container {
-        width: 45%;
-        height: 86%;
+        width: 47%;
+        height: 88%;
         margin-bottom: 0;
     }
     .results-container div {
@@ -259,24 +272,23 @@ input[type=number]::-webkit-outer-spin-button {
         flex-wrap: wrap;
         width: 86%;
         height: 50px;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
     }
     .results-container p {
         color: white;
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         padding-top: 7px;
     }
     .results-container small {
         color: var(--dark-grayish-cyan);
-        font-size: 0.55rem;
+        font-size: 0.5rem;
         padding-top: 5px;
     }
     #tip-amount, #total {
-        color: var(--strong-cyan);
-        font-size: 1.45rem;
+        font-size: 1.5rem;
         font-weight: bold;
         text-align: end;
-        padding-top: 5px;
+        padding-top: 3px;
     }
     .results-container #reset-button {
         border: transparent;
@@ -287,7 +299,7 @@ input[type=number]::-webkit-outer-spin-button {
         height: 50px;
         font-size: 1rem;
         font-weight: bold;
-        margin-top: 15px;
-        margin-bottom: 25px;
+        margin-top: 23%;
+        margin-bottom: 35px;
     }
 }
