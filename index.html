@@ -16,26 +16,23 @@
             <div class="flexbox-column" id="main-container">
                 <div class="custom-input" id="bill-input">
                     <label for="bill">Bill</label>
-                    <!-- I want to add a mechanism in place which limits inputs to two decimal places
-                    And would like to prevent entering negative numbers (regex would allow only numbers and the period)
-                    Here is a potential regex (pattern="^\d*(\.\d{0,2})?$") -->
-                    <input type="number" name="bill" id="bill" placeholder="0">
+                    <input type="text" name="bill" id="bill" placeholder="0">
                     <img src="Resources/Images/icon-dollar.svg" alt="dollar icon"/>
                 </div>
                 <div id="tip-selector">
                     <p>Select Tip %</p>
                     <div class="grid">
-                        <button>5%</button>
-                        <button>10%</button>
-                        <button>15%</button>
-                        <button>25%</button>
-                        <button>50%</button>
-                        <input type="number" name="custom-tip" id="custom-tip" placeholder="Custom">
+                        <button class="tip-options">5%</button>
+                        <button class="tip-options">10%</button>
+                        <button class="tip-options">15%</button>
+                        <button class="tip-options">25%</button>
+                        <button class="tip-options">50%</button>
+                        <input type="text" name="custom-tip" id="custom-tip" placeholder="Custom">
                     </div>
                 </div>
                 <div class="custom-input" id="people-num-input">
                     <label for="people-num">Number of People</label>
-                    <input type="number" name="people-num" id="people-num" placeholder="0">
+                    <input type="text" name="people-num" id="people-num" placeholder="0">
                     <img src="Resources/Images/icon-person.svg" alt="dollar icon"/>
                 </div>
                 <div class="flexbox-column results-container">
