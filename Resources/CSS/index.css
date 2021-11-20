@@ -42,6 +42,9 @@ input[type=number]::-webkit-outer-spin-button {
     --light-grayish-cyan: #c5e4e7;
     --lighter-grayish-cyan: #f4fafa;
     /* white color */
+
+    /* ### Error */
+    --orange: #c76f65;
 }
 
 /* # Layout and Design */
@@ -153,6 +156,15 @@ input[type=number]::-webkit-outer-spin-button {
     }
     #tip-selector input:focus {
         outline-color: var(--strong-cyan);
+    }
+
+    #people-num-error-mes {
+        visibility: hidden;
+        position: absolute;
+        color: var(--orange);
+        font-size: 0.7rem;
+        font-weight: bold;
+        right: 0;
     }
 
     .results-container {

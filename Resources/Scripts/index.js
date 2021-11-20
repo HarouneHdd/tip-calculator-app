@@ -9,6 +9,8 @@ const totalText = document.getElementById('total');
 
 const resetButton = document.getElementById('reset-button');
 
+const errorMessage = document.getElementById('people-num-error-mes');
+
 let billPrevValue = '';
 let tipPrevValue = '';
 let peopleNumPrevValue = '';
@@ -16,6 +18,7 @@ let peopleNumPrevValue = '';
 const primaryColor = '#26c0ab';
 const hoverColor = '#aae0d9';
 const darkCyan = '#00494d';
+const errorColor = '#c76f65';
 
 const selectedTipBtnClass = 'active-tip-btn';
 
@@ -157,7 +160,14 @@ peopleNumInput.addEventListener('input', () => {
     peopleNumPrevValue = peopleNumInput.value;
 
     if (peopleNumInput.value === '0') {
-        // Activate error message
+        errorMessage.style.visibility = 'visible';
+        peopleNumInput.style.outlineColor = errorColor;
+    }
+    else {
+        if (errorMessage.style.visibility === 'visible') {
+            errorMessage.style.visibility = 'hidden';
+            peopleNumInput.style.outlineColor = primaryColor;
+        }
     }
 
     updateResetBtnState();
@@ -198,4 +208,9 @@ resetButton.addEventListener('click', () => {
     resetButton.style.cursor = 'default';
 
     disableAllTipBtns();
+
+    if (errorMessage.style.visibility === 'visible') {
+        errorMessage.style.visibility = 'hidden';
+        peopleNumInput.style.outlineColor = primaryColor;
+    }
 });
