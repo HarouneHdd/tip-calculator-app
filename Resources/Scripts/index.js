@@ -1,3 +1,4 @@
+// # Global Variables //
 const billInput = document.getElementById('bill');
 const tipOptions = document.getElementsByClassName('tip-options');
 const tipInput = document.getElementById('custom-tip');
@@ -12,6 +13,7 @@ let billPrevValue = '';
 let tipPrevValue = '';
 let peopleNumPrevValue = '';
 
+// # Functions //
 // This is the function that verifies against regex
 const checkAgainstRegex = (regex, str) => regex.test(str);
 
@@ -46,17 +48,65 @@ const validateInput = (inputType, curValue, prevValue) => {
     return curValue;
 }
 
+// Check reset button state and updating the button
+const resetBtnIsActive = () => {
+    if (billPrevValue !== '' && tipPrevValue !== '' && peopleNumPrevValue !== '') {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+const updateResetBtnState = () => {
+    if (resetBtnIsActive() && resetButton.style.backgroundColor !== '#26c0ab') {
+        resetButton.style.backgroundColor = '#26c0ab';
+    }
+}
+// Display the results
+const disaplyResults = () => {
+    let tipAmount = 0;
+    let total = 0;
+
+    if (resetBtnIsActive() && peopleNumPrevValue !== '0') {
+
+        const bill = +billPrevValue;
+        const tip = +tipPrevValue / 100;
+        const peopleNum = +peopleNumPrevValue;
+    
+        tipAmount = (+bill * +tip).toFixed(2);
+        total = ((+bill + +tipAmount) / +peopleNum).toFixed(2);
+    }
+
+    tipAmountText.innerHTML = tipAmount.toString();
+    totalText.innerHTML = total.toString();
+}
+
+// # Dealing with events //
 billInput.addEventListener('input', () => {
     billInput.value = validateInput('float', billInput.value, billPrevValue);
     billPrevValue = billInput.value;
+
+    updateResetBtnState();
+    disaplyResults();
 });
 
 tipInput.addEventListener('input', () => {
     tipInput.value = validateInput('integer', tipInput.value, tipPrevValue);
     tipPrevValue = tipInput.value;
+
+    updateResetBtnState();
+    disaplyResults();
 });
 
 peopleNumInput.addEventListener('input', () => {
     peopleNumInput.value = validateInput('integer', peopleNumInput.value, peopleNumPrevValue);
     peopleNumPrevValue = peopleNumInput.value;
+
+    if (peopleNumInput.value === '0') {
+        // Activate error message
+    }
+
+    updateResetBtnState();
+    disaplyResults();
 });
