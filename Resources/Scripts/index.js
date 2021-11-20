@@ -65,8 +65,8 @@ const updateResetBtnState = () => {
 }
 // Display the results
 const disaplyResults = () => {
-    let tipAmount = 0;
-    let total = 0;
+    let tipAmountPP = 0;
+    let totalPP = 0;
 
     if (resetBtnIsActive() && peopleNumPrevValue !== '0') {
 
@@ -74,12 +74,12 @@ const disaplyResults = () => {
         const tip = +tipPrevValue / 100;
         const peopleNum = +peopleNumPrevValue;
     
-        tipAmount = (+bill * +tip).toFixed(2);
-        total = ((+bill + +tipAmount) / +peopleNum).toFixed(2);
+        tipAmountPP = +bill * +tip / +peopleNum;
+        totalPP = +bill / +peopleNum + +tipAmountPP;
     }
 
-    tipAmountText.innerHTML = tipAmount.toString();
-    totalText.innerHTML = total.toString();
+    tipAmountText.innerHTML = '$' + tipAmountPP.toFixed(2).toString();
+    totalText.innerHTML = '$' + totalPP.toFixed(2).toString();
 }
 
 // # Dealing with events //
@@ -90,7 +90,7 @@ billInput.addEventListener('input', () => {
     updateResetBtnState();
     disaplyResults();
 });
-
+// The tips
 tipInput.addEventListener('input', () => {
     tipInput.value = validateInput('integer', tipInput.value, tipPrevValue);
     tipPrevValue = tipInput.value;
@@ -98,6 +98,12 @@ tipInput.addEventListener('input', () => {
     updateResetBtnState();
     disaplyResults();
 });
+for (const tipOption of tipOptions) {
+    tipOption.addEventListener('click', () => {
+        tipPrevValue = tipOption.innerHTML.replace('%', '');
+        console.log(tipPrevValue);
+    });
+}
 
 peopleNumInput.addEventListener('input', () => {
     peopleNumInput.value = validateInput('integer', peopleNumInput.value, peopleNumPrevValue);
@@ -108,5 +114,36 @@ peopleNumInput.addEventListener('input', () => {
     }
 
     updateResetBtnState();
+    disaplyResults();
+});
+// The reset button
+resetButton.addEventListener('mouseover', () => {
+    if (!resetBtnIsActive()) {
+        return;
+    }
+
+    resetButton.style.backgroundColor = '#aae0d9';
+    resetButton.style.cursor = 'pointer';
+});
+resetButton.addEventListener('mouseout', () => {
+    if (!resetBtnIsActive()) {
+        return;
+    }
+
+    resetButton.style.backgroundColor = '#26c0ab';
+});
+resetButton.addEventListener('click', () => {
+    if (!resetBtnIsActive()) {
+        return;
+    }
+
+    billPrevValue = '';
+    tipPrevValue = '';
+    peopleNumPrevValue = '';
+
+    billInput.value = '';
+    tipInput.value = '';
+    peopleNumInput.value = '';
+
     disaplyResults();
 });
