@@ -13,6 +13,12 @@ let billPrevValue = '';
 let tipPrevValue = '';
 let peopleNumPrevValue = '';
 
+const primaryColor = '#26c0ab';
+const hoverColor = '#aae0d9';
+const darkCyan = '#00494d';
+
+const selectedTipBtnClass = 'active-tip-btn';
+
 // # Functions //
 // This is the function that verifies against regex
 const checkAgainstRegex = (regex, str) => regex.test(str);
@@ -59,8 +65,8 @@ const resetBtnIsActive = () => {
 }
 
 const updateResetBtnState = () => {
-    if (resetBtnIsActive() && resetButton.style.backgroundColor !== '#26c0ab') {
-        resetButton.style.backgroundColor = '#26c0ab';
+    if (resetBtnIsActive() && resetButton.style.backgroundColor !== primaryColor) {
+        resetButton.style.backgroundColor = primaryColor;
     }
 }
 // Display the results
@@ -81,6 +87,21 @@ const disaplyResults = () => {
     tipAmountText.innerHTML = '$' + tipAmountPP.toFixed(2).toString();
     totalText.innerHTML = '$' + totalPP.toFixed(2).toString();
 }
+// Disable all tip buttons
+const setSelectedTipBtn = tipButton => {
+    tipButton.style.cursor = 'default';
+    tipButton.style.color = darkCyan;
+    tipButton.style.backgroundColor = primaryColor;
+}
+const disableAllTipBtns = () => {
+    for (const tipOp of tipOptions) {
+        if (tipOp.classList.contains(selectedTipBtnClass)) {
+            tipOp.classList.remove(selectedTipBtnClass);
+            tipOp.style.color = 'white';
+            tipOp.style.backgroundColor = darkCyan;
+        }
+    }
+}
 
 // # Dealing with events //
 billInput.addEventListener('input', () => {
@@ -97,11 +118,37 @@ tipInput.addEventListener('input', () => {
 
     updateResetBtnState();
     disaplyResults();
+    disableAllTipBtns();
 });
+// All other tip options
 for (const tipOption of tipOptions) {
+    tipOption.addEventListener('mouseover', () => {
+        if (!tipOption.classList.contains(selectedTipBtnClass)) {
+            tipOption.style.cursor = 'pointer';
+            tipOption.style.color = darkCyan;
+            tipOption.style.backgroundColor = hoverColor;
+        }
+    });
+    
+    tipOption.addEventListener('mouseout', () => {
+        if (!tipOption.classList.contains(selectedTipBtnClass)) {
+            tipOption.style.color = 'white';
+            tipOption.style.backgroundColor = darkCyan;
+        }
+    });
+
     tipOption.addEventListener('click', () => {
         tipPrevValue = tipOption.innerHTML.replace('%', '');
-        console.log(tipPrevValue);
+        tipInput.value = '';
+        
+        updateResetBtnState();
+        disaplyResults();
+
+        if (!tipOption.classList.contains(selectedTipBtnClass)) {
+            disableAllTipBtns();
+            setSelectedTipBtn(tipOption);
+            tipOption.classList.add(selectedTipBtnClass);
+        }
     });
 }
 
@@ -122,7 +169,7 @@ resetButton.addEventListener('mouseover', () => {
         return;
     }
 
-    resetButton.style.backgroundColor = '#aae0d9';
+    resetButton.style.backgroundColor = hoverColor;
     resetButton.style.cursor = 'pointer';
 });
 resetButton.addEventListener('mouseout', () => {
@@ -130,7 +177,7 @@ resetButton.addEventListener('mouseout', () => {
         return;
     }
 
-    resetButton.style.backgroundColor = '#26c0ab';
+    resetButton.style.backgroundColor = primaryColor;
 });
 resetButton.addEventListener('click', () => {
     if (!resetBtnIsActive()) {
