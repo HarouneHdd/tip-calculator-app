@@ -193,4 +193,9 @@ resetButton.addEventListener('click', () => {
     peopleNumInput.value = '';
 
     disaplyResults();
+
+    resetButton.style.backgroundColor = '#6a918c';
+    resetButton.style.cursor = 'default';
+
+    disableAllTipBtns();
 });
