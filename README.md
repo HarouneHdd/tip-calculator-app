@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [https://harounehdd.github.io/tip-calculator-app/](https://harounehdd.github.io/tip-calculator-app/)
+- Live Site URL: [https://harounehadid.github.io/tip-calculator-app/](https://harounehadid.github.io/tip-calculator-app/)
 
 ## My process
 
